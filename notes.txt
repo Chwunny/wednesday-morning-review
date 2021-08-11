@@ -1,0 +1,52 @@
+When should we use a database?
+    Any time you want to store data, or use dynamic data.
+
+-What is the difference between relational and non relational database?
+
+        -What are some examples of each?
+
+-What are some datatypes in PostgreSQL?
+    -String, Int, Float, Date
+
+        What determines why we should use one datatype over the other?
+
+-PostgreSQL sandbox
+CREATE TABLE planets (
+planet_id SERIAL PRIMARY KEY,
+planet_name VARCHAR(20),
+color VARCHAR(20),
+radius VARCHAR(25),
+mass VARCHAR(25),
+distance_from_sun VARCHAR(25)
+)
+
+INSERT INTO planets(planet_name, color, radius, mass, distance_from_sun)
+VALUES('Mercury', 'Brown-Blue', '1516 Miles', '3.285 × 10^23 kg', '.4 AU')
+
+INSERT INTO planets(planet_name, color, radius, mass, distance_from_sun)
+VALUES('Venus', 'Yelllow', '3760 Miles', '4.8673 x 10^24 kg', '67 million miles')
+
+INSERT INTO planets(planet_name, color, radius, mass, distance_from_sun)
+VALUES('Earth', 'Blue-Green', '3760 Miles', '5.97237×1024 kg', '
+94.205 million miles')
+
+INSERT INTO planets(planet_name, color, radius, mass, distance_from_sun)
+VALUES('Venus', 'Yelllow', '3760 Miles', '4.8673 x 10^24 kg', '67 million miles')
+VALUES('Venus', 'Yelllow', '3760 Miles', '4.8673 x 10^24 kg', '67 million miles')
+
+-Select
+
+SELECT * FROM planets
+WHERE planet_id = 2
+
+SELECT * FROM planets
+WHERE color IN ('Yellow','Blue-Green','Brown-Blue')
+
+SELECT * FROM planets
+WHERE planet_name LIKE '%ar%'
+
+UPDATE planets
+SET color = 'Grey'
+WHERE planet_name = 'Mercury'
+
+DROP TABLE [IF EXISTS] planets
